@@ -21,9 +21,9 @@
 
 Для запуска ввести в командную строку из корневой папки проекта:
 
-docker build -t vk_contest:latest .
+"docker build -t vk_contest:latest ."
 
-docker run -p 5000:5000 vk_contest
+"docker run -p 5000:5000 vk_contest"
 
 В качестве результата работы в командную строку будет выведен NDCG скор. Предсказанные классы будут сохранены в predicted_labels.csv
 
