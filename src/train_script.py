@@ -6,12 +6,13 @@ from sklearn.linear_model import LogisticRegression
 
 import utils
 
-
+# Путь к данным
 PATH_TRAIN = "./data/train_df.csv"
 PATH_TEST  = "./data/test_df.csv"
-SAVE_MODEL = True
+# Сохранение модели в конце обучения
+SAVE_MODEL = False
 
-
+# Подготовка данных для обучения
 df_train = pd.read_csv(PATH_TRAIN)
 df_test  = pd.read_csv(PATH_TEST)
 
@@ -22,6 +23,7 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
+# Обучение и вывод метрик
 clf = LogisticRegression(max_iter=2000, class_weight="balanced")
 clf.fit(X_train_scaled, y_train)
 

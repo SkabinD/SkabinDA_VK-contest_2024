@@ -26,6 +26,7 @@ def get_training_samples(df, features_to_drop=None, synthetic=False):
     X_data = df.loc[:, [x not in not_features for x in df.columns]]
     y_data = df["target"].to_numpy()
 
+    # Синтетическая балансировка классов
     if synthetic:
         return SMOTE().fit_resample(X_data, y_data)
 
